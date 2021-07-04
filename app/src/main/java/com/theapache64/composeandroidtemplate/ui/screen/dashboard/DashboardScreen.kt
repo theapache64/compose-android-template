@@ -19,7 +19,7 @@ fun DashboardScreen(
     viewModel: DashboardViewModel = hiltViewModel()
 ) {
 
-    val greetings by viewModel.greetings.collectAsState()
+    val greetingsRes by viewModel.greetingsRes.collectAsState()
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -28,7 +28,7 @@ fun DashboardScreen(
     ) {
         // Greetings
         Text(
-            text = greetings,
+            text = stringResource(id = greetingsRes),
             style = MaterialTheme.typography.h3
         )
 
