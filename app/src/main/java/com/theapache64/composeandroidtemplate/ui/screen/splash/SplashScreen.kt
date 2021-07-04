@@ -19,10 +19,16 @@ import com.theapache64.composeandroidtemplate.R
 
 @Composable
 fun SplashScreen(
-    viewModel: SplashViewModel = hiltViewModel()
+    viewModel: SplashViewModel = hiltViewModel(),
+    onSplashFinished: () -> Unit
 ) {
 
     val versionName by viewModel.versionName.collectAsState()
+    val isSplashFinished by viewModel.isSplashFinished.collectAsState()
+
+    if (isSplashFinished) {
+        onSplashFinished()
+    }
 
     Box(
         modifier = Modifier.fillMaxSize()
