@@ -1,4 +1,4 @@
-package com.theapache64.composeandroidtemplate
+package com.theapache64.composeandroidtemplate.ui.screen
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,13 +8,13 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.theapache64.composeandroidtemplate.ui.theme.ComposeandroidtemplateTheme
+import com.theapache64.composeandroidtemplate.ui.theme.ComposeAndroidTemplateTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeandroidtemplateTheme {
+            ComposeAndroidTemplateTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Greeting("Android")
@@ -32,7 +32,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ComposeandroidtemplateTheme {
+    ComposeAndroidTemplateTheme {
         Greeting("Android")
     }
 }
