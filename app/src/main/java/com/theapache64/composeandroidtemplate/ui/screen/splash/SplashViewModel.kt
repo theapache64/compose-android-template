@@ -13,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor() : ViewModel() {
 
-    companion object{
+    companion object {
         private const val SPLASH_DURATION_IN_MILLIS = 1500L
     }
 
