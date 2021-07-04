@@ -3,17 +3,19 @@
     package="com.theapache64.composeandroidtemplate">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
+        android:fullBackupOnly="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Composeandroidtemplate">
+        android:theme="@style/Theme.ComposeAndroidTemplate">
         <activity
             android:name=".ui.screen.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Composeandroidtemplate.NoActionBar">
+            android:theme="@style/Theme.ComposeAndroidTemplate.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

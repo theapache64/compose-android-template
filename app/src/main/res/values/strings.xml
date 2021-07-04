@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">compose-android-template</string>
+    <string name="cd_app_logo">App Logo</string>
 </resources>
