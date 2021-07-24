@@ -47,7 +47,7 @@ Give a ⭐️ if this project helped you!
 
 ## ☑️ TODO
 
-- [ ] Integrate with `create-compose-app`
+- [x] Integrate with [create-compose-app](https://github.com/theapache64/create-compose-app)
 
 ## 📝 License
 
