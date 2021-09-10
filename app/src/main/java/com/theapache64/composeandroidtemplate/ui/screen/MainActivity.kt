@@ -16,11 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    companion object {
-        private const val SCREEN_SPLASH = "splash"
-        private const val SCREEN_DASHBOARD = "dashboard"
-    }
-
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,20 +24,20 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
             ComposeAndroidTemplateTheme {
                 Surface {
-                    NavHost(navController = navController, startDestination = SCREEN_SPLASH) {
+                    NavHost(navController = navController, startDestination = Screen.Splash.route) {
 
                         // Splash
-                        composable(SCREEN_SPLASH) {
+                        composable(Screen.Splash.route) {
                             SplashScreen(
                                 onSplashFinished = {
                                     navController.popBackStack() // Remove splash from stack
-                                    navController.navigate(SCREEN_DASHBOARD) // Move to dashboard
+                                    navController.navigate(Screen.Dashboard.route) // Move to dashboard
                                 }
                             )
                         }
 
                         // Dashboard
-                        composable(SCREEN_DASHBOARD) {
+                        composable(Screen.Dashboard.route) {
                             DashboardScreen()
                         }
                     }
