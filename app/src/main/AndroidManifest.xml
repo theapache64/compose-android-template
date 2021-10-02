@@ -15,7 +15,7 @@
             android:name=".ui.screen.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ComposeAndroidTemplate.NoActionBar">
+            android:theme="@style/Theme.ComposeAndroidTemplate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
