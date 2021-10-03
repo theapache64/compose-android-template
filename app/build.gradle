@@ -13,8 +13,8 @@ android {
         applicationId "com.theapache64.composeandroidtemplate"
         minSdk 21
         targetSdk 30
-        versionCode 10001
-        versionName "1.0.0-alpha01"
+        versionCode 20211003
+        versionName "0.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
