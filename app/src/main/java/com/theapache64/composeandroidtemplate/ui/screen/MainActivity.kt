@@ -32,12 +32,14 @@ class MainActivity : ComponentActivity() {
                                 onSplashFinished = {
                                     navController.popBackStack() // Remove splash from stack
                                     navController.navigate(Screen.Dashboard.route) // Move to dashboard
+                                    println("Navigating...")
                                 }
                             )
                         }
 
                         // Dashboard
                         composable(Screen.Dashboard.route) {
+                            println("Recomposing...")
                             DashboardScreen()
                         }
                     }

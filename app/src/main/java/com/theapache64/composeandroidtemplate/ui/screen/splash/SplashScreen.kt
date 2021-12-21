@@ -28,6 +28,7 @@ fun SplashScreen(
 
     if (isSplashFinished) {
         onSplashFinished()
+        return
     }
 
     Box(

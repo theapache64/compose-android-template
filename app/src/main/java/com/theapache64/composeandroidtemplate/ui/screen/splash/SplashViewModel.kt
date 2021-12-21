@@ -6,9 +6,7 @@ import com.theapache64.composeandroidtemplate.BuildConfig
 import com.theapache64.composeandroidtemplate.util.flow.mutableEventFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,10 +18,10 @@ class SplashViewModel @Inject constructor() : ViewModel() {
     }
 
     private val _versionName = MutableStateFlow("v${BuildConfig.VERSION_NAME}")
-    val versionName = _versionName.asStateFlow()
+    val versionName : StateFlow<String> = _versionName
 
     private val _isSplashFinished = mutableEventFlow<Boolean>()
-    val isSplashFinished = _isSplashFinished.asSharedFlow()
+    val isSplashFinished : SharedFlow<Boolean> = _isSplashFinished
 
     init {
         viewModelScope.launch {
