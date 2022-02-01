@@ -5,8 +5,6 @@ import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -19,7 +17,6 @@ fun DashboardScreen(
     viewModel: DashboardViewModel = hiltViewModel()
 ) {
 
-    val greetingsRes by viewModel.greetingsRes.collectAsState()
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -28,7 +25,7 @@ fun DashboardScreen(
     ) {
         // Greetings
         Text(
-            text = stringResource(id = greetingsRes),
+            text = stringResource(id = viewModel.greetingsRes),
             style = MaterialTheme.typography.h3
         )
 
