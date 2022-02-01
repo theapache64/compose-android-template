@@ -63,6 +63,6 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     // Navigation Compose Hilt Integration : Navigation Compose Hilt Integration
-    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-alpha03'
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
 
 }

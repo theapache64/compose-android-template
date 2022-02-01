@@ -1,5 +1,8 @@
 package com.theapache64.composeandroidtemplate.ui.screen.splash
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.theapache64.composeandroidtemplate.BuildConfig
@@ -17,8 +20,8 @@ class SplashViewModel @Inject constructor() : ViewModel() {
         private const val SPLASH_DURATION_IN_MILLIS = 1500L
     }
 
-    private val _versionName = MutableStateFlow("v${BuildConfig.VERSION_NAME}")
-    val versionName : StateFlow<String> = _versionName
+    var versionName by mutableStateOf("v${BuildConfig.VERSION_NAME}")
+        private set
 
     private val _isSplashFinished = mutableEventFlow<Boolean>()
     val isSplashFinished : SharedFlow<Boolean> = _isSplashFinished
@@ -26,7 +29,7 @@ class SplashViewModel @Inject constructor() : ViewModel() {
     init {
         viewModelScope.launch {
             delay(SPLASH_DURATION_IN_MILLIS)
-            _isSplashFinished.tryEmit(true)
+            _isSplashFinished.emit(true)
         }
     }
 }

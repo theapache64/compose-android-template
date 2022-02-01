@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.material.Surface
+import androidx.navigation.NavOptions
+import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -30,16 +32,16 @@ class MainActivity : ComponentActivity() {
                         composable(Screen.Splash.route) {
                             SplashScreen(
                                 onSplashFinished = {
-                                    navController.popBackStack() // Remove splash from stack
-                                    navController.navigate(Screen.Dashboard.route) // Move to dashboard
-                                    println("Navigating...")
+                                    val options = NavOptions.Builder()
+                                        .setPopUpTo(Screen.Splash.route, inclusive = true)
+                                        .build()
+                                    navController.navigate(Screen.Dashboard.route, options) // Move to dashboard
                                 }
                             )
                         }
 
                         // Dashboard
                         composable(Screen.Dashboard.route) {
-                            println("Recomposing...")
                             DashboardScreen()
                         }
                     }
