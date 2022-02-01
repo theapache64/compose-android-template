@@ -9,7 +9,7 @@ import com.theapache64.composeandroidtemplate.BuildConfig
 import com.theapache64.composeandroidtemplate.util.flow.mutableEventFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -24,7 +24,7 @@ class SplashViewModel @Inject constructor() : ViewModel() {
         private set
 
     private val _isSplashFinished = mutableEventFlow<Boolean>()
-    val isSplashFinished : SharedFlow<Boolean> = _isSplashFinished
+    val isSplashFinished: SharedFlow<Boolean> = _isSplashFinished
 
     init {
         viewModelScope.launch {

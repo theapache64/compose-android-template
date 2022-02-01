@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.material.Surface
 import androidx.navigation.NavOptions
-import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -35,7 +34,10 @@ class MainActivity : ComponentActivity() {
                                     val options = NavOptions.Builder()
                                         .setPopUpTo(Screen.Splash.route, inclusive = true)
                                         .build()
-                                    navController.navigate(Screen.Dashboard.route, options) // Move to dashboard
+                                    navController.navigate(
+                                        Screen.Dashboard.route,
+                                        options
+                                    ) // Move to dashboard
                                 }
                             )
                         }

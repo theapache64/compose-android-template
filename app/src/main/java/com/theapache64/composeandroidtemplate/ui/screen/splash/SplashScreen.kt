@@ -25,7 +25,7 @@ fun SplashScreen(
 ) {
     val isSplashFinished by viewModel.isSplashFinished.collectAsState(initial = false)
 
-    LaunchedEffect(isSplashFinished){
+    LaunchedEffect(isSplashFinished) {
         if (isSplashFinished) {
             onSplashFinished()
         }
