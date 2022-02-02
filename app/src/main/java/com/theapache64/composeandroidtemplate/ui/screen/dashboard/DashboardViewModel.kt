@@ -14,6 +14,11 @@ class DashboardViewModel @Inject constructor() : ViewModel() {
         private set
 
     fun onClickMeClicked() {
-        greetingsRes = R.string.label_hello_compose
+        // Toggling message
+        greetingsRes = if (greetingsRes == R.string.label_hello_world) {
+            R.string.label_hello_compose
+        } else {
+            R.string.label_hello_world
+        }
     }
 }
