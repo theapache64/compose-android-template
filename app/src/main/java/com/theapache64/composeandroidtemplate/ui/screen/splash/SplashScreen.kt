@@ -45,8 +45,9 @@ fun SplashScreen(
         )
 
         // Version number
+        val versionName by viewModel.versionName.collectAsState()
         Text(
-            text = viewModel.versionName,
+            text = versionName,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 20.dp)
