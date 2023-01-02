@@ -52,7 +52,7 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 ```
-Copyright © 2021 - theapache64
+Copyright © 2023 - theapache64
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
