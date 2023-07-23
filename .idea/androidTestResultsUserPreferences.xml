@@ -8,9 +8,13 @@
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
                 <map>
+                  <entry key="14011JEC203443" value="120" />
+                  <entry key="366ecc0c" value="120" />
                   <entry key="Duration" value="90" />
+                  <entry key="Google&#10; Pixel 4a" value="120" />
                   <entry key="Pixel_4_API_28" value="120" />
                   <entry key="Tests" value="360" />
+                  <entry key="Xiaomi&#10; M2101K6P" value="120" />
                 </map>
               </option>
             </AndroidTestResultsTableState>
