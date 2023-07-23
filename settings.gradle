@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "compose-android-template"
 include ':app'
+include ':benchmark'
