@@ -21,7 +21,7 @@ import com.theapache64.composeandroidtemplate.R
 @Composable
 fun SplashScreen(
     viewModel: SplashViewModel = hiltViewModel(),
-    onSplashFinished: () -> Unit
+    onSplashFinished: () -> Unit,
 ) {
     val isSplashFinished by viewModel.isSplashFinished.collectAsState(initial = false)
 

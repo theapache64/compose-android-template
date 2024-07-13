@@ -6,6 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -20,11 +24,14 @@ class MainActivity : ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels()
 
+    @OptIn(ExperimentalComposeUiApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeAndroidTemplateTheme {
-                Surface {
+                Surface(modifier = Modifier.semantics {
+                    testTagsAsResourceId = true
+                }) {
                     AppNavigation()
                 }
             }
@@ -38,17 +45,14 @@ class MainActivity : ComponentActivity() {
 
             // Splash
             composable(Screen.Splash.route) {
-                SplashScreen(
-                    onSplashFinished = {
-                        val options = NavOptions.Builder()
-                            .setPopUpTo(Screen.Splash.route, inclusive = true)
+                SplashScreen(onSplashFinished = {
+                    val options =
+                        NavOptions.Builder().setPopUpTo(Screen.Splash.route, inclusive = true)
                             .build()
-                        navController.navigate(
-                            Screen.Dashboard.route,
-                            options
-                        ) // Move to dashboard
-                    }
-                )
+                    navController.navigate(
+                        Screen.Dashboard.route, options
+                    ) // Move to dashboard
+                })
             }
 
             // Dashboard
